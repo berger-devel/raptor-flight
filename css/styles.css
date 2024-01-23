@@ -1,0 +1,260 @@
+html, body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+#map-container {
+    width: 100%;
+    height: 100%;
+}
+
+.waypoint-form {
+    position: absolute;
+
+    border-radius: 3px;
+    background-color: rgba(50, 50, 50, .7);
+    box-shadow: 0 0 2px rgb(50, 50, 50);
+
+    left: 10px;
+}
+
+#route-form {
+    top: 10px;
+}
+
+@media only screen and (max-width: 1320px) {
+    #route-form {
+        width: calc(100% - 20px);
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    #route-form {
+        width: 35%;
+    }
+}
+
+.waypoint {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+@media only screen and (max-width: 1320px) {
+    .waypoint {
+        height: 40px;
+        margin: 40px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    .waypoint {
+        height: 20px;
+        margin: 20px;
+    }
+}
+
+.waypoint label {
+    position: absolute;
+    left: 3px;
+    top: 0px;
+
+    color: black;
+    opacity: 50%;
+}
+
+@media only screen and (max-width: 1320px) {
+    .waypoint label {
+        height: 40px;
+        font-size: 38px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    .waypoint label {
+        height: 20px;
+        font-size: 19px;
+    }
+}
+
+.waypoint label.keydown {
+    opacity: 0;
+}
+
+.waypoint label.small {
+    animation-name: label-ani;
+    animation-duration: .125s;
+    animation-fill-mode: forwards;
+}
+
+@media only screen and (max-width: 1320px) {
+    @keyframes label-ani {
+        from {
+            font-size: 38px;
+            left: 3px;
+            top: 1px;
+            color: black;
+            opacity: 0;
+        }
+
+        to {
+            font-size: 26px;
+            left: 1px;
+            top: -34px;
+            opacity: 50%;
+            color: white;
+        }
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    @keyframes label-ani {
+        from {
+            font-size: 19px;
+            left: 3px;
+            top: 1px;
+            color: black;
+            opacity: 0;
+        }
+
+        to {
+            font-size: 13px;
+            left: 1px;
+            top: -17px;
+            opacity: 50%;
+            color: white;
+        }
+    }
+}
+
+.waypoint input {
+    width: 100%;
+    padding: 2px;
+}
+
+@media only screen and (max-width: 1320px) {
+    .waypoint input {
+        height: 40px;
+        font-size: 38px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    .waypoint input {
+        height: 16px;
+        font-size: 19px;
+    }
+}
+
+.waypoint-form button {
+    margin: 0;
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    color: white;
+}
+
+@media only screen and (max-width: 1320px) {
+    .waypoint-form button {
+        width: 40px;
+        height: 40px;
+        font-size: 38px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    .waypoint-form button {
+        width: 20px;
+        height: 20px;
+        font-size: 19px;
+    }
+}
+
+.waypoint .geolocation {
+    margin-right: 5px;
+}
+
+@media only screen and (max-width: 1320px) {
+    .waypoint .geolocation {
+        margin-left: 5px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    .waypoint .geolocation {
+        margin-left: 0;
+    }
+}
+
+.waypoint .geolocation.unavailable {
+    display: none;
+}
+
+.autocomplete {
+    position: absolute;
+    top: 55px;
+    width: 100%;
+    background-color: white;
+
+    z-index: 10;
+    visibility: hidden;
+}
+
+.autocomplete.visible {
+    visibility: visible;
+}
+
+.autocomplete ul {
+    margin: 0;
+    padding: 5px;
+    list-style-type: none;
+}
+
+.autocomplete ul li {
+    margin-bottom: 5px;
+}
+
+.autocomplete ul li:hover {
+    background-color: rgba(50, 50, 50, .5);
+    color: white;
+}
+
+@media only screen and (max-width: 1320px) {
+    #export {
+        left: calc(100% - 50px);
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    #export {
+        left: calc(35% - 10px);
+    }
+}
+
+#route-type {
+    padding: 2px;
+    color: white;
+}
+
+@media only screen and (max-width: 1320px) {
+    #route-type {
+        font-size: 38px;
+    }
+}
+
+@media only screen and (min-width: 1321px) {
+    #route-type {
+        font-size: 19px;
+    }
+}
+
+.fa-check {
+    color: lightgreen;
+}
+
+.fa-times {
+    color: red;
+}

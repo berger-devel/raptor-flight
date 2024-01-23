@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <script>
+        function askPermission() {
+            Notification.requestPermission().then(function () {
+
+            });
+        }
+
+        function showNotification() {
+            console.log(window.Notification, Notification.permission);
+            if (window.Notification && Notification.permission === 'granted') {
+                console.log('creating');
+                n = new Notification('ok', { body: "test" });
+                console.log(n);
+            }
+        }
+    </script>
+</head>
+<button onclick="askPermission()">button 0</button>
+<button onclick="showNotification()">button 1</button>
+</html>

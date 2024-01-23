@@ -1,0 +1,37 @@
+<form autocomplete="off">
+    <div id="route-form" class="waypoint-form">
+        <% _.each(waypoints, function (waypoint, index) { %>
+        <div class="waypoint">
+            <label for="waypoint<%= index %>"><%= waypoint.label %></label>
+            <input type="text" id="waypoint<%= index %>" value="<%= waypoint.value %>">
+            <button type="button" class="waypoint-form waypoint geolocation unavailable">
+                <i class="fas fa-crosshairs"></i>
+            </button>
+            <div class="autocomplete">
+                <ul></ul>
+            </div>
+        </div>
+        <% }); %>
+    </div>
+
+    <div id="waypoint-add" class="waypoint-form">
+        <button type="button">
+            <i class="fas fa-plus"></i>
+        </button>
+    </div>
+
+    <div id="export" class="waypoint-form">
+        <button type="button">
+            <div><i class="fa fa-upload"></i></div>
+        </button>
+    </div>
+
+    <div id="route-type" class="waypoint-form">
+        <input type="radio" id="bicycle" name="route-types" value="bicycle" checked="checked">
+        <label for="bicycle">Fahrrad</label>
+        <input type="radio" id="spedelec" value="spedelec" name="route-types">
+        <label for="spedelec">S-Pedelec</label>
+    </div>
+</form>
+
+<div id="console"></div>
